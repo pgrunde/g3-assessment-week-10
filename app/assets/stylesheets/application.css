@@ -13,3 +13,21 @@
  *= require_tree .
  *= require_self
  */
+.red {
+    color:maroon;
+    list-style-type: none;
+}
+
+.test {
+    border:1px solid red;
+    display:inline;
+}
+
+.bonkers {
+    border:1px solid purple;
+}
+
+.left {
+    position:relative;
+    float:left
+}

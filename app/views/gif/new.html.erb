@@ -1,0 +1,34 @@
+<h1>New gif</h1>
+<%= form_for @gif, url: gifs_new_path do |f| %>
+
+  <% if @gif.errors.present? %>
+    <ul>
+    <% @gif.errors.full_messages.each do |msg| %>
+      <li class="red"><%= msg %></li>
+    <% end %>
+    </ul>
+  <% end %>
+
+  <p>
+    <%= f.label :url, :class=>"left" %>
+    <%= f.text_field :url, :class => @gif.errors[:url].any? ? "test left" : "bonkers left" %>
+  </p>
+  <% if @gif.errors[:url] %>
+    <p class="red">
+      <%= @gif.errors[:url].first %>
+    </p>
+  <% end %>
+
+  <p>
+    <%= f.label :description, :class=>"left" %>
+    <%= f.text_field :description, :class => @gif.errors[:url].any? ? "test left" : "bonkers left" %>
+  </p>
+  <% if @gif.errors[:description] %>
+    <p class="red">
+      <%= @gif.errors[:description].first %>
+    </p>
+  <% end %>
+  <p>
+    <%= f.submit "Create gif" %>
+  </p>
+<% end %>
